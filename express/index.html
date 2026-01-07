@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+:root{
+  --bg: linear-gradient(180deg, #f9d5e5, #d5e8ff);
+  --text: #3b2f4a;
+  --text2: #4a3b5a;
+  --accent1: #f3b6d8;
+  --accent2: #cfa8ff;
+  --shadow: rgba(150, 100, 180, 0.25);
+}
+
+body{
+  font-family: "Lato", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.mySlides{ display:none; }
+
+h2, h3{
+  font-family: "Comic Sans MS", "Lato", sans-serif;
+  letter-spacing: 2px;
+  color: #5c3b6f;
+}
+
+p{
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text2);
+}
+
+.w3-container{
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.7);
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  filter: brightness(1.05) saturate(1.2);
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+img:hover{
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 12px 30px rgba(180, 120, 220, 0.4);
+}
+
+.w3-button{
+  border-radius: 30px;
+  background: var(--accent1) !important;
+  color: var(--text) !important;
+  transition: .3s;
+}
+.w3-button:hover{
+  background: var(--accent2) !important;
+  transform: translateY(-2px);
+}
+
+/* NAVBAR */
+.w3-bar.w3-black{
+  background: linear-gradient(90deg, var(--accent1), var(--accent2)) !important;
+  border-radius: 40px;
+  margin: 12px;
+  padding: 6px;
+}
+.w3-bar .w3-button{
+  background-color: transparent !important;
+  border-radius: 25px;
+  margin: 0 6px;
+}
+.w3-bar .w3-button:hover{
+  background: rgba(255,255,255,0.5) !important;
+  transform: scale(1.05);
+}
+
+/* Dropdown */
+.w3-dropdown-content{
+  background-color: #f9cbe5 !important;
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: 0 10px 25px rgba(160, 100, 200, 0.3);
+}
+.w3-dropdown-content .w3-button{
+  border-radius: 15px;
+  margin: 4px 0;
+}
+
+/* SLIDER images */
+.mySlides img{
+  height: 80vh;
+  object-position: center 75%;
+}
+
+/* BAND images */
+#band .w3-third{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#band .w3-third p{
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #5c3b6f;
+  margin-bottom: 6px;
+}
+#band img{
+  width: 160px;
+  height: 160px;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(120, 70, 160, 0.25);
+}
+#band img:hover{
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 18px 34px rgba(120, 70, 160, 0.35);
+  filter: saturate(1.15) brightness(1.05);
+}
+
+/* TOUR */
+#tour.w3-black{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+#tour .w3-content{
+  background: rgba(255,255,255,0.65);
+  border-radius: 28px;
+  box-shadow: 0 14px 40px rgba(120, 70, 160, 0.25);
+  padding: 40px 24px;
+}
+#tour ul.w3-ul{
+  border-radius: 18px;
+  overflow: hidden;
+  border: none;
+  background: rgba(255,255,255,0.7);
+}
+#tour ul.w3-ul li{
+  background: transparent;
+  color: var(--text);
+}
+#tour .w3-tag.w3-red{
+  background: var(--accent1) !important;
+  color: var(--text) !important;
+  border-radius: 999px;
+}
+#tour .w3-third .w3-container.w3-white{
+  background: rgba(255,255,255,0.75) !important;
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(120, 70, 160, 0.18);
+}
+#tour .w3-third img{
+  height: 170px;
+  border-radius: 22px;
+  object-position: center 60%;
+}
+#tour .w3-button.w3-black{
+  background: var(--accent1) !important;
+  color: var(--text) !important;
+  border-radius: 999px;
+}
+#tour .w3-button.w3-black:hover{
+  background: var(--accent2) !important;
+}
+
+/* MODAL */
+#ticketModal header.w3-teal{
+  background: linear-gradient(90deg, var(--accent1), var(--accent2)) !important;
+  color: var(--text) !important;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+#ticketModal .w3-modal-content{
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 55px rgba(120, 70, 160, 0.35);
+}
+#ticketModal.w3-modal{
+  background: rgba(80, 40, 110, 0.35) !important;
+  backdrop-filter: blur(4px);
+}
+#ticketModal header .w3-display-topright{
+  background: rgba(255,255,255,0.7) !important;
+  color: var(--text) !important;
+  border-radius: 999px !important;
+}
+#ticketModal header .w3-display-topright:hover{
+  background: rgba(255,255,255,0.95) !important;
+}
+#ticketModal .w3-button.w3-teal{
+  background: var(--accent1) !important;
+  color: var(--text) !important;
+  border-radius: 999px;
+}
+#ticketModal .w3-button.w3-teal:hover{
+  background: var(--accent2) !important;
+}
+#ticketModal .w3-button.w3-red{
+  background: rgba(255,255,255,0.65) !important;
+  color: var(--text) !important;
+  border-radius: 999px;
+  border: 1px solid rgba(120, 70, 160, 0.25);
+}
+#ticketModal .w3-button.w3-red:hover{
+  background: rgba(255,255,255,0.9) !important;
+}
+#ticketModal input.w3-input{
+  border-radius: 14px;
+  border: 1px solid rgba(120, 70, 160, 0.25);
+}
+#ticketModal input.w3-input:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(207, 168, 255, 0.35);
+  border-color: rgba(207, 168, 255, 0.6);
+}
+
+/* Task 6 animation: "breathing" for buttons */
+@keyframes softPulse {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+.w3-button.w3-black{
+  animation: softPulse 2.4s ease-in-out infinite;
+}
+
+/* class toggled by JS double-click */
+.dreamy{
+  filter: brightness(1.1) saturate(1.4) hue-rotate(8deg) !important;
+}
+
+</style>
+
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BAND</a>
+        <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+            <a href="#" class="w3-bar-item w3-button">Extras</a>
+            <a href="#" class="w3-bar-item w3-button">Media</a>
+        </div>
+        </div>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">BAND</a>
+    <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <!-- Automatic Slideshow Images -->
+    <div class="mySlides w3-display-container w3-center">
+        <img src="https://instagram.frix7-1.fna.fbcdn.net/v/t39.30808-6/469447030_18446633311068637_8009863860368975951_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=MzM2NTcwMjE0NjE0MzkzOTEwMg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTAzMC5zZHIuQzMifQ%3D%3D&_nc_ohc=QZ9Ufbo7WHcQ7kNvwF8eTOX&_nc_oc=Adkua6pmf30BcOYKJxK6u5ebS5zh4ZzF4b1LKYaLumEN5uqmxWnxyxIPLC-iXpQqmx0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.frix7-1.fna&_nc_gid=WkCjmSsKQR6AmBNn5Zfcjg&oh=00_AfoUQGHPn4RPKMhOmnwJPJy7Lp5ZYUqKO-gIk9I1yChdsA&oe=696445BD" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3>Los Angeles</h3>
+        <p><b>We had the best time playing at Venice Beach!</b></p>   
+        </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center">
+        <img src="https://i.redd.it/4hoa1ea41rzc1.jpeg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3>New York</h3>
+        <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
+        </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center">
+        <img src="https://annaleemedia.com/blog/wp-content/uploads/2016/12/melanie-martinez-cry-baby-tour-43.jpg" style="width:100%">
+        <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3>Chicago</h3>
+        <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
+        </div>
+    </div>
+
+    <!-- The Band Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+        <h2 class="w3-wide">THE BAND</h2>
+        <p class="w3-opacity"><i>We love music</i></p>
+        <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="w3-row w3-padding-32">
+        <div class="w3-third">
+            <p>Name</p>
+            <img src="https://upload.wikimedia.org/wikipedia/en/9/93/Melanie_Martinez_-_Cry_Baby_%28album%29.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
+        <div class="w3-third">
+            <p>Name</p>
+            <img src="https://preview.redd.it/what-if-i-told-you-that-portals-is-melanie-martinezs-4th-v0-oq1gs6s9kkeb1.jpg?width=220&format=pjpg&auto=webp&s=23893423c9998827953315d442ba45fad1bcdbd1" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        </div>
+        <div class="w3-third">
+            <p>Name</p>
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Melanie_Martinez_-_K-12.png" class="w3-round" alt="Random Name" style="width:60%">
+        </div>
+        </div>
+    </div>
+
+    <!-- The Tour Section -->
+    <div class="w3-black" id="tour">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+        <h2 class="w3-wide w3-center">TOUR DATES</h2>
+        <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
+
+        <ul class="w3-ul w3-border w3-white w3-text-grey">
+            <li class="w3-padding">September <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
+            <li class="w3-padding">October <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
+            <li class="w3-padding">November <span class="w3-badge w3-right w3-margin-right">3</span></li>
+        </ul>
+
+        <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+            <div class="w3-third w3-margin-bottom">
+            <img src="https://res.cloudinary.com/dtljonz0f/image/upload/c_auto,ar_4:3,w_3840,g_auto/f_auto/q_auto/v1/shutterstock_329662223_ss_non-editorial_3_csm8lw?_a=BAVAZGGf0" alt="New York" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                <p><b>New York</b></p>
+                <p class="w3-opacity">Fri 27 Nov 2016</p>
+                <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/06/d0/bf/c2.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                <p><b>Paris</b></p>
+                <p class="w3-opacity">Sat 28 Nov 2016</p>
+                <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+            <img src="https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                <p><b>San Francisco</b></p>
+                <p class="w3-opacity">Sun 29 Nov 2016</p>
+                <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Ticket Modal -->
+    <div id="ticketModal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+        <header class="w3-container w3-teal w3-center w3-padding-32"> 
+            <span onclick="document.getElementById('ticketModal').style.display='none'" 
+        class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+            <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+        </header>
+        <div class="w3-container">
+            <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
+            <input class="w3-input w3-border" type="text" placeholder="How many?">
+            <p><label><i class="fa fa-user"></i> Send To</label></p>
+            <input class="w3-input w3-border" type="text" placeholder="Enter email">
+            <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+            <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+            <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+        </div>
+        </div>
+    </div>
+
+    <!-- The Contact Section -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">CONTACT</h2>
+        <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
+        <div class="w3-row w3-padding-32">
+        <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+            <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+            <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+        </div>
+        <div class="w3-col m6">
+            <form action="/action_page.php" target="_blank">
+            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                </div>
+                <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                </div>
+            </div>
+            <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+            <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    
+    <!-- End Page Content -->
+    </div>
+
+    <!-- Image of location/map -->
+    <img src="https://i0.wp.com/acmag.com.au/wp-content/uploads/2020/08/Screen-Shot-2020-08-01-at-1.40.06-pm.png?fit=1440%2C611&ssl=1" class="w3-image w3-greyscale-min" style="width:100%">
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+
+    <script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+    }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    var modal = document.getElementById('ticketModal');
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+	
+	
+	window.addEventListener("scroll", () => {
+	  const nav = document.querySelector(".w3-bar.w3-black");
+	  if (!nav) return;
+	  nav.style.opacity = window.scrollY > 40 ? "0.92" : "1";
+	});
+
+	// 2) Click effect: double-click on hero image toggles "dreamy" filter
+	const slideImgs = document.querySelectorAll(".mySlides img");
+	slideImgs.forEach(img => {
+	  img.addEventListener("dblclick", () => {
+		img.classList.toggle("dreamy");
+	  });
+	});
+
+	// 3) Input effect: live character counter for "Message" field in CONTACT
+	const messageInput = document.querySelector('#contact input[name="Message"]');
+	if (messageInput) {
+	  const counter = document.createElement("div");
+	  counter.style.fontSize = "12px";
+	  counter.style.opacity = "0.7";
+	  counter.style.marginTop = "6px";
+	  counter.textContent = "0 / 140";
+	  messageInput.parentElement.appendChild(counter);
+
+	  messageInput.addEventListener("input", () => {
+		const max = 140;
+		if (messageInput.value.length > max) {
+		  messageInput.value = messageInput.value.slice(0, max);
+		}
+		counter.textContent = `${messageInput.value.length} / ${max}`;
+	  });
+	}
+    </script>
+
+    </body>
+</html>
